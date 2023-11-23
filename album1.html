@@ -1,0 +1,99 @@
+<!-- album1.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Album 1</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto'>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    body {
+      background-image:url('background_c.png');     
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #lpContainer {
+      position: relative;
+      width: 800px; /* 이미지 너비에 맞게 조절 */
+    }
+
+    #lpImage,
+    #lpPlayerImage,
+    #titleImage {
+      position: absolute;
+    }
+
+    #lpImage {
+      top: -450px;
+      left: -270px;
+      animation: rotate 10s linear infinite;
+      z-index: 1;
+    }
+
+    #lpPlayerImage {
+      top: -400px; /* 원하는 위치에 맞게 조절 */
+      left: 250px; /* 원하는 위치에 맞게 조절 */
+      z-index: 2;
+    }
+
+    #titleImage {
+      top: 50%; /* 화면 세로 중앙에 위치 */
+      left: 50%; /* 화면 가로 중앙에 위치 */
+      transform: translate(-50%, -50%);
+      z-index: 3; /* 기존 이미지들보다 위에 배치 */
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+</style>
+</head>
+
+<body>
+
+  <h1>Album 1</h1>
+
+  <!-- Add your content for Album 1 here -->
+  <div id="lpContainer">
+    <img id="lpImage" src="lp.png" alt="LP Image" width="1000">
+    <img id="lpPlayerImage" src="lp-player.png" alt="LP Player Image" width="650">
+    <img id="titleImage" src="title.png" alt="Title Image" width="500">
+  </div>
+
+  <audio id="audioPlayer" controls>
+    <source src="Ditch Diggin'.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <button onclick="togglePlayPause()">Toggle Play/Pause</button>
+  <button onclick="goBack()">Go Back to Carousel</button>
+
+  <script>
+    function togglePlayPause() {
+      var audio = document.getElementById('audioPlayer');
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    function goBack() {
+      // Change the current window location to the carousel page
+      window.location.href = 'index.html';
+    }
+  </script>
+
+</body>
+
+</html>

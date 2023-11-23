@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flashing Background</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      animation: flashing 10s infinite; /* Adjust the duration as needed */
+      background: url('screen1.png') center/cover no-repeat;
+      background-size: 100% 100%; /* Make the background image cover the entire container */
+    }
+
+    @keyframes flashing {
+      0%, 25%, 100% {
+        background: url('screen1.png') center/cover no-repeat;
+      }
+      50%, 75% {
+        background: url('screen2.png') center/cover no-repeat;
+      }
+    }
+  </style>
+</head>
+<body>
+
+</body>
+</html>
